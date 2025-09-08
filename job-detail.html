@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details - JobNest India</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>JobNest India</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <!-- <li><a href="employer.html">For Employers</a></li> -->
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Job Detail -->
+    <section class="job-detail">
+        <div class="container">
+            <div class="job-header">
+                <div class="job-info">
+                    <h1 id="job-title">Senior Software Engineer</h1>
+                    <div class="job-meta">
+                        <span class="company" id="job-company">Tech Solutions Pvt Ltd</span>
+                        <span class="location" id="job-location">Bangalore, Karnataka</span>
+                        <span class="salary" id="job-salary">₹8-12 LPA</span>
+                        <span class="job-type" id="job-type">Full Time</span>
+                    </div>
+                </div>
+                <div class="job-actions">
+                    <button class="apply-btn" onclick="applyForJob()">Apply Now</button>
+                    <button class="save-btn" onclick="saveJob()" id="save-btn">Save Job</button>
+                    <div class="share-buttons">
+                        <button onclick="shareJob('linkedin')">LinkedIn</button>
+                        <button onclick="shareJob('twitter')">Twitter</button>
+                        <button onclick="shareJob('whatsapp')">WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-content">
+                <div class="job-description">
+                    <h3>Job Description</h3>
+                    <div id="job-description-content">
+                        <p>We are looking for a Senior Software Engineer to join our dynamic team. You will be responsible for designing, developing, and maintaining high-quality software solutions.</p>
+                    </div>
+
+                    <h3>Key Responsibilities</h3>
+                    <ul id="job-responsibilities">
+                        <li>Design and develop scalable web applications</li>
+                        <li>Collaborate with cross-functional teams</li>
+                        <li>Write clean, maintainable code</li>
+                        <li>Participate in code reviews</li>
+                        <li>Mentor junior developers</li>
+                    </ul>
+
+                    <h3>Requirements</h3>
+                    <ul id="job-requirements">
+                        <li>Bachelor's degree in Computer Science or related field</li>
+                        <li>5+ years of experience in software development</li>
+                        <li>Proficiency in JavaScript, React, Node.js</li>
+                        <li>Experience with databases (MySQL, MongoDB)</li>
+                        <li>Strong problem-solving skills</li>
+                    </ul>
+
+                    <h3>Benefits</h3>
+                    <ul id="job-benefits">
+                        <li>Competitive salary package</li>
+                        <li>Health insurance</li>
+                        <li>Flexible working hours</li>
+                        <li>Professional development opportunities</li>
+                        <li>Work from home options</li>
+                    </ul>
+                </div>
+
+                <div class="company-info">
+                    <h3>About the Company</h3>
+                    <div class="company-card">
+                        <div class="company-logo">TS</div>
+                        <div class="company-details">
+                            <h4 id="company-name">Tech Solutions Pvt Ltd</h4>
+                            <p id="company-description">A leading technology company specializing in innovative software solutions for businesses across India.</p>
+                            <div class="company-stats">
+                                <span>Founded: 2015</span>
+                                <span>Employees: 500+</span>
+                                <span>Industry: Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Jobs -->
+    <section class="similar-jobs">
+        <div class="container">
+            <h3>Similar Jobs</h3>
+            <div class="jobs-grid" id="similar-jobs-grid">
+                <!-- Similar jobs will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JobNest India</h4>
+                    <p>Your trusted partner in finding the perfect job opportunity in India.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="#">Browse Jobs</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Find Candidates</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@JobNestindia.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobNest India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="job-detail.js"></script>
+</body>
+</html>

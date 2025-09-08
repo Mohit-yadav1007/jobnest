@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Profile - JobNest India</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>JobNest India</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <!-- <li><a href="employer.html">For Employers</a></li> -->
+                <li><a href="profile.html" class="profile-link">
+                    <img src="/FEE_PROJECT_SEM-3/user.png" alt="Profile" class="profile-icon">
+    </a></li>
+    <li id="loginBtn" style="display: none;"><a href="login_page.html">Login</a></li>
+    <li id="logoutBtn" style="display: none;"><button onclick="logoutUser()" style="background: none; border: none; color: white; cursor: pointer; font-weight: 500;">Logout</button></li>
+
+            </ul>
+
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>  
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div id="avatar" class="avatar-placeholder"></div>
+                    <input type="file" id="photo-upload" style="display:none;" accept="image/*" onchange="handlePhotoUpload(event)">
+                    <button class="upload-photo-btn" onclick="document.getElementById('photo-upload').click()">Upload Photo</button>
+                    <button class="remove-photo-btn" onclick="removePhoto()" style="display: none;">Remove Photo</button>
+                </div>
+                <!-- <div class="profile-info">
+
+                    <h1 id="profile-name">John Sharma</h1>
+                    <div class="profile-title-section">
+                        <p id="profile-title-display">Software Engineer</p>
+                        <input type="text" id="profile-title-edit" class="edit-input" style="display: none;" placeholder="Enter your job title">
+                    </div>
+                    <div class="profile-location-section">
+                        <p id="profile-location-display">Mumbai, Maharashtra</p>
+                        <input type="text" id="profile-location-edit" class="edit-input" style="display: none;" placeholder="Enter your location">
+                    </div>
+                    <div class="profile-stats">
+                        <span>Profile Views: <strong id="profile-views">127</strong></span>
+                        <span>Applications: <strong id="applications-count">8</strong></span>
+                        <span>Saved Jobs: <strong id="saved-jobs-count">15</strong></span>
+                    </div>
+                </div> -->
+
+
+
+
+
+                <div class="profile-info">
+    <!-- Name -->
+    <div class="profile-name-section">
+        <h1 id="profile-name">John Sharma</h1>
+        <input type="text" id="profile-name-input" class="edit-input" style="display:none;" placeholder="Enter your name">
+    </div>
+
+    <!-- Title -->
+    <div class="profile-title-section">
+        <p id="profile-title-display">Software Engineer</p>
+        <input type="text" id="profile-title-input" class="edit-input" style="display:none;" placeholder="Enter your job title">
+    </div>
+
+    <!-- Location -->
+    <div class="profile-location-section">
+        <p id="profile-location-display">Mumbai, Maharashtra</p>
+        <input type="text" id="profile-location-input" class="edit-input" style="display:none;" placeholder="Enter your location">
+    </div>
+
+    <!-- Stats -->
+    <div class="profile-stats">
+        <span>Profile Views: <strong id="profile-views">127</strong></span>
+        <span>Applications: <strong id="applications-count">8</strong></span>
+        <span>Saved Jobs: <strong id="saved-jobs-count">15</strong></span>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                <div class="profile-actions">
+                    <button class="edit-profile-btn" onclick="toggleEditMode()">Edit Profile</button>
+                    <button class="download-cv-btn">Download CV</button>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-main">
+                    <!-- About Section -->
+                    <div class="profile-section about-section">
+                        <h3>About</h3>
+                        <div class="editable-content" id="about-content">
+                            <p>Experienced software engineer with 5+ years in full-stack development. Passionate about
+                                creating innovative solutions and working with cutting-edge technologies.</p>
+                        </div>
+                        <textarea class="edit-field" id="about-edit" style="display: none;"></textarea>
+                        <div class="about-actions">
+                            <!-- <button class="about-edit-btn">Edit</button> -->
+                            <button class="about-save-btn" onclick="saveAbout()" style="display: none;">Save</button>
+                        </div>
+                    </div>
+
+                    <!-- Experience Section -->
+                    <div class="profile-section">
+                        <h3>Experience</h3>
+                        <div class="experience-list" id="experience-list">
+                            <div class="experience-item">
+                                <h4>Senior Software Engineer</h4>
+                                <p class="company">Tech Innovations Pvt Ltd</p>
+                                <p class="duration">Jan 2022 - Present</p>
+                                <p class="description">Leading development of web applications using React and Node.js.
+                                    Managing a team of 3 junior developers.</p>
+                            </div>
+                            <div class="experience-item">
+                                <h4>Software Engineer</h4>
+                                <p class="company">Digital Solutions Inc</p>
+                                <p class="duration">Jun 2019 - Dec 2021</p>
+                                <p class="description">Developed and maintained multiple client projects using
+                                    JavaScript, Python, and MySQL.</p>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="profile-section">
+                        <h3>Education</h3>
+                        <div class="education-list" id="education-list">
+                            <div class="education-item">
+                                <h4>Bachelor of Technology in Computer Science</h4>
+                                <p class="institution">Indian Institute of Technology, Mumbai</p>
+                                <p class="duration">2015 - 2019</p>
+                                <p class="grade">CGPA: 8.5/10</p>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addEducation()">+ Add Education</button>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="profile-section">
+                        <h3>Skills</h3>
+                        <div class="skills-list" id="skills-list">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                        <div class="add-skill">
+                            <input type="text" id="new-skill" placeholder="Add a skill">
+                            <button onclick="addSkill()">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-sidebar">
+                    <!-- CV Upload Section -->
+                    <div class="sidebar-section">
+                        <h4>Resume/CV</h4>
+                        <div class="cv-upload">
+                            <input type="file" id="cv-upload" style="display:none;" onchange="handleCVUpload(event)" />
+                            <button class="upload-cv-btn" onclick="document.getElementById('cv-upload').click()">Upload CV</button>
+                            <button class="remove-cv-btn" onclick="removeCV()" style="display: none;">Remove CV</button>
+                            <div class="cv-info"></div>
+                        </div>
+                    </div>
+
+                    <!-- Saved Jobs -->
+                    <div class="sidebar-section">
+                        <h4>Saved Jobs</h4>
+                        <div class="saved-jobs-list" id="saved-jobs-list">
+                            <!-- Saved jobs will be populated by JavaScript -->
+                        </div>
+                        <a href="#" class="view-all-link">View All Saved Jobs</a>
+                    </div>
+
+                    <!-- Recent Applications -->
+                    <div class="sidebar-section">
+                        <h4>Recent Applications</h4>
+                        <div class="applications-list" id="applications-list">
+                            <!-- Recent applications will be populated by JavaScript -->
+                        </div>
+                        <a href="#" class="view-all-link">View All Applications</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JobNest India</h4>
+                    <p>Your trusted partner in finding the perfect job opportunity in India.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="#">Browse Jobs</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Find Candidates</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@JobNestindia.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobNest India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="profile.js"></script>
+    <script src="script.js"></script>
+    <script src="login_pagejs.js"></script>
+    <script>
+        // Check login status and show appropriate buttons
+        document.addEventListener("DOMContentLoaded", function() {
+            const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+            const loginBtn = document.getElementById("loginBtn");
+            const logoutBtn = document.getElementById("logoutBtn");
+
+            if (isLoggedIn) {
+                logoutBtn.style.display = "block";
+            } else {
+                loginBtn.style.display = "block";
+            }
+        });
+
+        // Logout function
+        function logoutUser(){
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("currentUser");
+            alert("You have been logged out!");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>

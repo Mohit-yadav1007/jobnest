@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - Indian Job Board</title>
+    <link rel="stylesheet" href="jobs.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                 <a href="index.html" class="logo-link">
+        <img src="/FEE_PROJECT_SEM-3/Untitled design.png" alt="JobNest Logo" class="site-logo"></a>
+        <h1>JobNest India</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <!-- <li><a href="employer.html">For Employers</a></li> -->
+                <li><a href="profile.html" class="profile-link">
+      <img src="/FEE_PROJECT_SEM-3/user.png" alt="Profile" class="profile-icon">
+    </a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="jobs-hero">
+            <div class="container">
+                <h1>Find Your Dream Job</h1>
+                <p>Discover thousands of job opportunities across India</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="jobSearch" placeholder="Search jobs, companies, skills...">
+                        <input type="text" id="locationSearch" placeholder="Location">
+                        <button class="search-btn">Search Jobs</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-filters">
+            <div class="container">
+                <div class="filters-row">
+                    <div class="filter-group">
+                        <label>Category:</label>
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="technology">Technology</option>
+                            <option value="finance">Finance</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="sales">Sales</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Experience:</label>
+                        <select id="experienceFilter">
+                            <option value="">Any Experience</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Salary Range:</label>
+                        <select id="salaryFilter">
+                            <option value="">Any Salary</option>
+                            <option value="0-300000">₹0 - ₹3 LPA</option>
+                            <option value="300000-600000">₹3 - ₹6 LPA</option>
+                            <option value="600000-1000000">₹6 - ₹10 LPA</option>
+                            <option value="1000000+">₹10+ LPA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Job Type:</label>
+                        <select id="typeFilter">
+                            <option value="">All Types</option>
+                            <option value="full-time">Full Time</option>
+                            <option value="part-time">Part Time</option>
+                            <option value="contract">Contract</option>
+                            <option value="internship">Internship</option>
+                        </select>
+                    </div>
+                    
+                    <button class="clear-filters">Clear Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-listing">
+            <div class="container">
+                <div class="jobs-header">
+                    <div class="jobs-count">
+                        <span id="jobsCount">0</span> jobs found
+                    </div>
+                    <div class="sort-options">
+                        <label>Sort by:</label>
+                        <select id="sortBy">
+                            <option value="date">Latest</option>
+                            <option value="salary">Salary</option>
+                            <option value="company">Company</option>
+                            <option value="relevance">Relevance</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="jobs-grid" id="jobsGrid" >
+                    <!-- Jobs will be populated by JavaScript -->
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JobNest India</h3>
+                    <p>Connecting talent with opportunities across India</p>
+                </div>
+                <div class="footer-section">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="profile.html">Create Profile</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="employer.html">Post Jobs</a></li>
+                        <li><a href="#">Find Candidates</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobNest India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="jobs.js"></script>
+</body>
+</html>

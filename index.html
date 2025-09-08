@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobNest India - Find Your Dream Job</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo-link">
+        <img src="/FEE_PROJECT_SEM-3/loga_new.png" alt="JobNest Logo" class="site-logo"></a>
+                    <h1>JobNest India</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <!-- <li><a href="employer.html">For Employers</a></li> -->
+                    <li><a href="profile.html"class="profile-link">
+                             <img src="/FEE_PROJECT_SEM-3/user.png" alt="Profile" class="profile-icon">
+                        </a>
+                    </li>
+                    <li id="loginBtn" style="display: none;"><a href="login_page.html">Login</a></li>
+                    <!-- <li id="logoutBtn" style="display: none;"><button onclick="logoutUser()" style="background: none; border: none; color: white; cursor: pointer; font-weight: 500;">Logout</button></li> -->
+                </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Find Your Dream Job in India</h2>
+            <p>Discover thousands of job opportunities across India</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="job-search" placeholder="Job title, keywords, or company">
+                    <input type="text" id="location-search" placeholder="City or state">
+                    <button class="search-btn" onclick="searchJobs()">Search Jobs</button>
+                </div>
+                <div class="search-suggestions" id="search-suggestions"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="filters">
+        <div class="container">
+            <h3>Browse by Category</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Jobs</button>
+                <button class="filter-btn" data-category="technology">Technology</button>
+                <button class="filter-btn" data-category="finance">Finance</button>
+                <button class="filter-btn" data-category="healthcare">Healthcare</button>
+                <button class="filter-btn" data-category="education">Education</button>
+                <button class="filter-btn" data-category="marketing">Marketing</button>
+            </div>
+
+
+            <!-- <div class="advanced-filters">
+                <select id="job-type-filter">
+                    <option value="">Job Type</option>
+                    <option value="full-time">Full Time</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="contract">Contract</option>
+                    <option value="internship">Internship</option>
+                </select>
+                <select id="experience-filter">
+                    <option value="">Experience</option>
+                    <option value="0-1">0-1 years</option>
+                    <option value="2-5">2-5 years</option>
+                    <option value="5-10">5-10 years</option>
+                    <option value="10+">10+ years</option>
+                </select>
+                <select id="salary-filter">
+                    <option value="">Salary Range</option>
+                    <option value="0-3">₹0 - ₹3 LPA</option>
+                    <option value="3-6">₹3 - ₹6 LPA</option>
+                    <option value="6-10">₹6 - ₹10 LPA</option>
+                    <option value="10+">₹10+ LPA</option>
+                </select>
+            </div> -->
+
+            
+        </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section class="featured-jobs">
+        <div class="container">
+            <h3>Featured Jobs</h3>
+            <div class="jobs-count">
+                <span id="jobsCount">0</span> jobs found
+            </div>
+            <div class="jobs-grid" id="jobs-grid">
+                <!-- Jobs will be populated by JavaScript -->
+            </div>
+            <div class="load-more">
+                <button class="load-more-btn" onclick="loadMoreJobs()">Load More Jobs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employers Section -->
+    <section class="employers">
+        <div class="container">
+            <h3>Top Employers</h3>
+            <div class="employers-grid">
+                <div class="employer-card">
+                    <div class="employer-logo">TCS</div>
+                    <h4>Tata Consultancy Services</h4>
+                    <p>Leading IT services company</p>
+                </div>
+                <div class="employer-card">
+                    <div class="employer-logo">INF</div>
+                    <h4>Infosys</h4>
+                    <p>Global technology consulting</p>
+                </div>
+                <div class="employer-card">
+                    <div class="employer-logo">WIP</div>
+                    <h4>Wipro</h4>
+                    <p>Digital transformation leader</p>
+                </div>
+                <div class="employer-card">
+                    <div class="employer-logo">REL</div>
+                    <h4>Reliance Industries</h4>
+                    <p>Diversified conglomerate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h3>Success Stories</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Found my dream job in just 2 weeks! The platform is amazing."</p>
+                    <div class="testimonial-author">- Priya Sharma, Software Engineer</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Great platform for finding quality candidates for our startup."</p>
+                    <div class="testimonial-author">- Rahul Gupta, HR Manager</div>
+                </div>
+                <div class="testimonial">
+                    <p>"User-friendly interface and relevant job recommendations."</p>
+                    <div class="testimonial-author">- Anjali Patel, Marketing Executive</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JobNest India</h4>
+                    <p>Your trusted partner in finding the perfect job opportunity in India.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="#">Browse Jobs</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Find Candidates</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@JobNestindia.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobNest India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Check login status and show appropriate buttons
+        document.addEventListener("DOMContentLoaded", function() {
+            const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+            const loginBtn = document.getElementById("loginBtn");
+            const logoutBtn = document.getElementById("logoutBtn");
+
+            if (isLoggedIn) {
+                logoutBtn.style.display = "block";
+            } else {
+                loginBtn.style.display = "block";
+            }
+        });
+
+        // Logout function
+        function logoutUser(){
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("currentUser");
+            alert("You have been logged out!");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>
